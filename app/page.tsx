@@ -1,11 +1,11 @@
 "use client"
 import React, { useState, useEffect } from "react";
-import { io } from "socket.io-client";
+import { io, Socket } from "socket.io-client";
 
 export default function Home() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<string[]>([]);
-  const [socket, setSocket] = useState<any>(null);
+  const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
     const s = io("https://10.0.0.68:5000", {
