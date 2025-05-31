@@ -10,7 +10,7 @@ export default function Home() {
   const [message5, setMessage5] = useState<number | null>(null);
 
   const handleSend = async () => {
-    const res = await fetch("http://10.0.0.68:5000/server", {
+    const res = await fetch("https://10.0.0.68:5000/server", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text: input }),
