@@ -19,7 +19,9 @@ export default function Home() {
       setMessages((prev) => [data.message, ...prev].slice(0, 5));
     });
 
-    return () => s.disconnect();
+    return () => {
+      s.disconnect();
+    };
   }, []);
 
   const handleSend = () => {
